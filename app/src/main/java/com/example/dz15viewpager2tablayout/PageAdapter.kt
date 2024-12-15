@@ -1,5 +1,6 @@
 package com.example.dz15viewpager2tablayout
 
+import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -16,8 +17,13 @@ class PageAdapter(
     }
 
     override fun createFragment(position: Int): Fragment {
-       val fragment = ViewPagerFragment()
-        fragment.arguments = bundleOf("page" to pageList[position])
+        val fragment = ViewPagerFragment()
+        fragment.arguments = Bundle().apply {
+            // Передаём позицию
+            putInt("position", position)
+            // Передаём адрес
+            putString("address", pageList[position].adress) // Передаём адрес
+        }
         return fragment
     }
 }
