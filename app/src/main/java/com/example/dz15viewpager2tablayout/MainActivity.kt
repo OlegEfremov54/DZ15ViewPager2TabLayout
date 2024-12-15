@@ -17,13 +17,13 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 
 
-class MainActivity : AppCompatActivity( ){
+class MainActivity : FragmentActivity( ){
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
     private val pageList = Page.pages
     private lateinit var adapter: PageAdapter
     private var urlString:String = ""
-    private lateinit var toolbarMain: Toolbar
+    //private lateinit var toolbarMain: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +31,11 @@ class MainActivity : AppCompatActivity( ){
         setContentView(R.layout.activity_main)
 
         //Инициализация Тулбар
-        toolbarMain = findViewById(R.id.toolbarMain)
-        setSupportActionBar(toolbarMain)
-        title = " Интернет – слайдер"
-        toolbarMain.subtitle = " Вер.1.Главная страница"
-        toolbarMain.setLogo(R.drawable.adresbook)
+        //toolbarMain = findViewById(R.id.toolbarMain)
+        //setSupportActionBar(toolbarMain)
+        //title = " Интернет – слайдер"
+        //toolbarMain.subtitle = " Вер.1.Главная страница"
+        //toolbarMain.setLogo(R.drawable.adresbook)
 
         //Привязываем кнопки
         viewPager = findViewById(R.id.viewPager)
